@@ -10,8 +10,10 @@ export class AppComponent {
   newTask: string = '';
 
   addTask() {
-    this.tasks.push(this.newTask);
-    this.newTask = '';
+    if (this.newTask.length > 0) {
+      this.tasks.push(this.newTask);
+      this.newTask = '';
+    }
   }
 
   delTask(task: string) {
